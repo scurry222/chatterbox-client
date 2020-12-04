@@ -6,6 +6,8 @@ var Parse = {
     // todo: save a message to the server
     console.log(message, successCB, errorCB);
   },
+  // how to troll : test<script>console.log("Didn't")</script>
+  // <audio autoplay><audio>
 
   readAll: function(successCB, errorCB = null) {
     $.ajax({
