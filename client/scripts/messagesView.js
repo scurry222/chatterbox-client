@@ -3,16 +3,16 @@ var MessagesView = {
   $chats: $('#chats'),
 
   initialize: function() {
-    Parse.readAll((data) => {
-      for (let item of data.results) {
-        this.renderMessage(item);
-      }
-    });
+    // Parse.readAll((data) => {
+    //   for (let item of data.results) {
+    //     this.renderMessage(item);
+    //   }
+    // });
   },
 
   render: function() {
     // add message view to #chats
-    this.initialize();
+    // this.initialize();
   },
 
   renderMessage: function(item) {

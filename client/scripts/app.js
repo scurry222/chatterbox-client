@@ -8,8 +8,11 @@ var App = {
     App.username = window.location.search.substr(10);
 
     FormView.initialize();
+    // set a event handler on submit button
     RoomsView.initialize();
+    // dropdown menu
     MessagesView.initialize();
+    // embolden friend on click
 
     // Fetch initial batch of messages
     App.startSpinner();
@@ -19,9 +22,13 @@ var App = {
 
   fetch: function(callback = ()=>{}) {
     Parse.readAll((data) => {
+      Messages.persist(data.results);
+      MessagesView.render();
       // examine the response from the server request:
-      console.log(data);
-
+      Rooms.persist(data.results);
+      RoomsView.render();
+      // place data onto messagesmodel
+      // inform them to render in messagesView, roomsView
       callback();
     });
   },

@@ -1,13 +1,13 @@
-class MessageView {
-  constructor() {}
+var MessageView = {
 
-  render (username, text) {
+  render: function(username, text) {
     return _.template(`
       <div class="chat">
-        <div class="username">${username}</div>
-        <div>${text}</div>
+        <div class="username">${username.toString()}</div>
+        <div>${text.toString()}</div>
       </div>
     `);
   }
-}
+};
+
 
